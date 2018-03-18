@@ -1,0 +1,206 @@
+
+@mixin appearance ($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
+}
+
+/* CSS3 Animated Transitions */
+
+@mixin transition($transition-property, $transition-time, $method) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+/* CSS3 Box Shadow */
+
+@mixin box-shadow($top, $left, $blur, $color) {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+}
+
+/* CSS3 Blur */
+
+@mixin blur($blur) {
+    -webkit-filter: blur($blur);
+    -moz-filter: blur($blur);
+    -ms-filter: blur($blur);
+    filter: blur($blur);
+}
+
+/* CSS3 Border Radius */
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+/* CSS3 Translate */
+
+@mixin translate($translate-x, $translate-y) {
+    -moz-transform: translate($translate-x, $translate-y);
+    -ms-transform: translate($translate-x, $translate-y);
+    -webkit-transform: translate($translate-x, $translate-y);
+    transform: translate($translate-x, $translate-y);
+}
+
+/* CSS3 Rotate */
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+/* CSS3 Linear Gradient */
+
+@mixin linear-gradient($fromColor, $toColor) {
+    background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor));
+    background-image: -webkit-linear-gradient(top, $fromColor, $toColor);
+    background-image: -moz-linear-gradient(top, $fromColor, $toColor);
+    background-image: -ms-linear-gradient(top, $fromColor, $toColor);
+    background-image: -o-linear-gradient(top, $fromColor, $toColor);
+    background-image: linear-gradient(top, $fromColor, $toColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin horizontal-gradient($fromColor, $toColor) {
+    background-color: $fromColor;
+    background-image: -webkit-gradient(linear, left top, right top, from($fromColor), to($toColor));
+    background-image: -webkit-linear-gradient(left, $fromColor, $toColor);
+    background-image: -moz-linear-gradient(left, $fromColor, $toColor);
+    background-image: -ms-linear-gradient(left, $fromColor, $toColor);
+    background-image: -o-linear-gradient(left, $fromColor, $toColor);
+    background-image: linear-gradient(left, $fromColor, $toColor);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+/* CSS3 Columns */
+
+@mixin columns($count, $width, $gap) {
+    -webkit-column-count: $count;
+    -moz-column-count: $count;
+    column-count: $count;
+    -webkit-column-width: $width;
+    -moz-column-width: $width;
+    column-width: $width;
+    -webkit-column-gap: $gap;
+    -moz-column-gap: $gap;
+    column-gap: $gap;
+    -webkit-column-break-inside: avoid;
+    column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+}
+
+@mixin flex {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: flex;
+}
+
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    flex-direction: $direction;
+}
+
+@mixin flex-align-items($alignment) {
+    -webkit-align-items: $alignment;
+    -webkit-moz-items: $alignment;
+    align-items: $alignment;
+}
+
+@mixin flex-justify($justify) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    justify-content: $justify;
+}
+
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+}
+
+@mixin flex-flow($direction, $wrap) {
+    -webkit-flex-flow: $direction $wrap;
+    -moz-flex-flow: $direction $wrap;
+    flex-flow: $direction $wrap;
+}
+@mixin flex-align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    align-content: $align;
+}
+
+
+/* CSS3 Flexbox Masonry */
+
+@mixin masonry {
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    -ms-flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 0;
+}
+
+/* CSS3 Inset Box Shadow */
+
+@mixin box-shadow-inset($color, $offset, $blur, $spread) {
+    -webkit-box-shadow: $color $offset $blur $spread inset;
+    -moz-box-shadow: $color $offset $blur $spread inset;
+    box-shadow: $color $offset $blur $spread inset;
+}
+
+/* CSS3 Transform */
+
+@mixin transform($property1, $property2) {
+    -webkit-transform: $property1 $property2;
+    -moz-transform: $property1 $property2;
+    -ms-transform: $property1 $property2;
+    transform: $property1 $property2;
+}
+
+@mixin transform-origin($val1, $val2) {
+    -webkit-transform-origin: $val1 $val2;
+    -moz-transform-origin: $val1 $val2;
+    -ms-transform-origin: $val1 $val2;
+    transform-origin: $val1 $val2;
+}
+
+@mixin flexbox-center {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+}
+
+@mixin linearGradient($top, $bottom) {
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top, $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom, $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}

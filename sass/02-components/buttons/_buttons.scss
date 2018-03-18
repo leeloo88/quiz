@@ -1,0 +1,233 @@
+.btn {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+}
+
+.primary-btn {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 70px 12px 40px;
+    overflow: hidden;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
+    &:before {
+        content: '';
+        display: inline-block;
+        background-image: url('../../../Git/inside/assets/images/arrow-white.svg');
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 20px;
+        position: absolute;
+        top: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        left: -130%;
+    }
+
+    &:after {
+        content: '';
+        display: inline-block;
+        background-image: url('../../../Git/inside/assets/images/arrow-white.svg');
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 20px;
+        position: absolute;
+        top: 0;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        right: 25px;
+        
+    }
+
+    &:hover {
+        padding: 12px 40px 12px 70px;
+
+        &:before {
+            left: 30px;
+        }
+
+        &:after {
+            right: -130%;
+        }
+    }
+}
+
+.closeBtn {
+    background-image: url('../../../Git/inside/assets/images/close.svg');
+    background-repeat: no-repeat;
+    background-size: 30px;
+    background-position: right;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    height: 30px;
+    width: 30px;
+    transition: 0.25s;
+    cursor: pointer;
+
+    &:hover, &:visited, &:active {
+        background-image: url('../../../Git/inside/assets/images/close-red.svg');
+    }
+}
+
+.red {
+    background: $red-btn;
+    color: #fff;
+
+    &:hover {
+        background: $red;
+    }
+}
+
+.transparent {
+    background: transparent;
+    color: #666;
+}
+
+.primary-btn.cros {
+    &:before {
+        background-image: url('../../../Git/inside/assets/images/cros.jpg');
+    }
+
+    &:after{
+        background-image: url('../../../Git/inside/assets/images/cros.jpg');
+    }
+
+    &:hover {
+        color: $red;
+
+        &:before {
+            background-image: url('../../../Git/inside/assets/images/red-cros.jpg');
+        }
+    
+        &:after{
+            background-image: url('../../../Git/inside/assets/images/red-cros.jpg');
+        }
+    }
+}
+
+.arrow {
+    &:before {
+        background-image: url('../../../Git/inside/assets/images/arrow-black.svg');
+    }
+
+    &:after{
+        background-image: url('../../../Git/inside/assets/images/arrow-black.svg');
+    }
+
+    &:hover {
+        color: $red;
+
+        &:before {
+            background-image: url('../../../Git/inside/assets/images/arrow-red.svg');
+        }
+    
+        &:after{
+            background-image: url('../../../Git/inside/assets/images/arrow-red.svg');
+        }
+    }
+}
+
+.shift-btn {
+    background: url('../../../Git/inside/assets/images/shift.jpg') no-repeat;
+    background-size: 30px;
+    background-position: center;
+    height: 100%;
+    width: 50px;
+}
+
+.hamburger {
+    // font: inherit;
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    // padding: 15px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: all;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+    opacity: 0;
+    visibility: hidden;
+    z-index: -1;
+    width: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hamburger-box {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+}
+
+.hamburger .hamburger-inner, 
+.hamburger .hamburger-inner:after, 
+.hamburger .hamburger-inner:before {
+    background-color: #444;
+}
+
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    transition-timing-function: ease;
+    transition-duration: .15s;
+    transition-property: transform;
+    border-radius: 4px;
+    background-color: #000;
+}
+
+.hamburger--spring .hamburger-inner:before {
+    content: '';
+    display: block;
+    top: 10px;
+    transition: top .1s cubic-bezier(.33333,.66667,.66667,1) .2s,transform .13s cubic-bezier(.55,.055,.675,.19);
+}
+
+.hamburger--spring .hamburger-inner:after {
+    content: '';
+    display: block;
+    top: 20px;
+    transition: top .2s cubic-bezier(.33333,.66667,.66667,1) .2s,transform .13s cubic-bezier(.55,.055,.675,.19);
+}
+
+.hamburger--spring.is-active .hamburger-inner {
+    transition-delay: .22s;
+    background-color: transparent;
+}
+
+.hamburger--spring.is-active .hamburger-inner:after {
+    content: '';
+    display: block;
+    top: 0;
+    transition: top .2s cubic-bezier(.33333,0,.66667,.33333),transform .13s cubic-bezier(.215,.61,.355,1) .22s;
+    transform: translate3d(0,10px,0) rotate(-45deg);
+}
+
+.hamburger--spring.is-active .hamburger-inner:before {
+    content: '';
+    display: block;
+    top: 0;
+    transition: top .1s cubic-bezier(.33333,0,.66667,.33333) .15s,transform .13s cubic-bezier(.215,.61,.355,1) .22s;
+    transform: translate3d(0,10px,0) rotate(45deg);
+}
