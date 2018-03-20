@@ -68,7 +68,7 @@ $(function() {
                     // ...add an HTML radio button
                     answers.push(
                         `<label>
-                          <input type="radio" name="question-${questionNumber}" value="${letter}">
+                          <input type="radio" class="radioButton" name="question-${questionNumber}" value="${letter}">
                           ${letter} :
                           ${currentQuestion.answers[letter]}
                         </label>`
@@ -101,14 +101,20 @@ $(function() {
           // find selected answer
           const answerContainer = answerContainers[questionNumber];
           const selector = 'input[name=question'+questionNumber+']:checked';
-          const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-        //   console.log(answerContainer);
-        //   console.log(userAnswer);
-        //   console.log(answerContainer.querySelector(selector));
+          // const kurSelected = answerContainer.querySelector('.kur');
+          // const bu = (answerContainer.querySelector('.kur:checked').value);
+          // const userAnswer = (answerContainer.querySelector('.kur:checked').value || {}).value;
+          const userAnswer = (answerContainer.querySelector('.radioButton:checked').value) || '';
+          // console.log(bu);
+          // console.log(kurSelected);
+          // console.log(userAnswer);
+          
+          // console.log(answerContainer.querySelector('.kur'));
           
           // if answer is correct
           if(userAnswer===currentQuestion.correctAnswer){
             // add to the number of correct answers
+            // console.log('correct answer');
             numCorrect++;
       
             // color the answers green
@@ -119,6 +125,7 @@ $(function() {
           else{
             // color the answers red
             answerContainers[questionNumber].style.color = 'red';
+            // console.log('wrong answer');
           }
         });
       
